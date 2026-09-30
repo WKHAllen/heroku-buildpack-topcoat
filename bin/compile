@@ -152,10 +152,8 @@ if [ $RUST_SKIP_BUILD -ne 1 ]; then
   echo "-----> Building application using topcoat-cli and cargo"
   cd "$BUILD_DIR/$BUILD_PATH"
   rm -rf target/
-  echo "topcoat asset bundle --release --out $CARGO_TARGET_DIR/target/release/assets"
+  echo "topcoat asset bundle --release --out $CARGO_TARGET_DIR/release/assets"
   topcoat asset bundle --release --out "$CARGO_TARGET_DIR"/release/assets
-  echo "cargo build --release"
-  cargo build --release
   mkdir -p target/release
   echo "cp -r $CARGO_TARGET_DIR/release/. target/release"
   cp -r "$CARGO_TARGET_DIR"/release/. target/release
